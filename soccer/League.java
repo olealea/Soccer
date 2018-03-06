@@ -70,5 +70,30 @@ public class League {
                     +goal.team.team_name+" marked a goal on minute "+goal.time);
         }
 
-    }
+        //search for the *Olg*
+        System.out.println("");
+        for (Player player : team2.team_roster) {
+            if (player.player_name.matches(".*Olg.")) {
+                System.out.println("Found " + player.player_name);
+            }
+        }
+
+        //display members of a team required way
+        for (Player player : team1.team_roster){
+            String first_name = player.player_name.substring(player.player_name.indexOf(" "));
+            String last_name = player.player_name.substring(0, player.player_name.indexOf(" "));
+            System.out.println(first_name+", "+last_name);
+        }
+
+        //another method
+        //Lastname, Firstname
+//        StringBuilder familyNameFirst = new StringBuilder();
+//        for (Player thePlayer: team1.playerArray) {
+//            String[] name = thePlayer.playerName.split(" ");
+//            familyNameFirst.append(name[1]);
+//            familyNameFirst.append(", ");
+//            familyNameFirst.append(name[0]);
+//            System.out.println(familyNameFirst);
+//            familyNameFirst.delete(0,familyNameFirst.length());
+       }
 }
